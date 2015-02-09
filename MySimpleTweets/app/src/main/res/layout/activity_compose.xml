@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.codepath.apps.MySimpleTweets.ComposeActivity">
+
+    <RelativeLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#ffe3e3e3"
+        android:id="@+id/buttonsBgLayout">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel_button_title"
+            android:id="@+id/buttonCancel"
+            android:layout_margin="5dp"
+            android:layout_alignParentStart="true"
+            android:onClick="onCancelComposeClicked" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tweet_button_title"
+            android:id="@+id/bCompose"
+            android:layout_alignBottom="@+id/buttonCancel"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="#ff90e6ff"
+            android:layout_margin="5dp"
+            android:onClick="onTweetClicked" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="90dp"
+        android:layout_below="@+id/buttonsBgLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/userDetailsLayout">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/ivComposeUserImage"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_margin="10dp"
+            android:contentDescription="user image"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Name"
+            android:id="@+id/tvComposeUserName"
+            android:layout_toRightOf="@+id/ivComposeUserImage"
+            android:layout_toEndOf="@+id/ivComposeUserImage"
+            android:layout_marginStart="59dp"
+            android:layout_margin="5dp"
+            android:layout_alignTop="@+id/ivComposeUserImage"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Alias"
+            android:id="@+id/tvComposeUserAlias"
+            android:layout_alignParentBottom="false"
+            android:layout_toRightOf="@+id/ivComposeUserImage"
+            android:layout_toEndOf="@+id/ivComposeUserImage"
+            android:layout_alignBottom="@+id/ivComposeUserImage"
+            android:layout_margin="5dp" />
+    </RelativeLayout>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etComposeTweet"
+        android:layout_below="@+id/userDetailsLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="10dp"
+        android:hint="Whats happening?"
+        android:textAlignment="viewStart" />
+
+</RelativeLayout>
